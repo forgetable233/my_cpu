@@ -1,7 +1,7 @@
 module single_cycle(clock, reset);
 
-input clock;
-input  reset;
+input   clock;
+input   reset;
 
 wire [31:0] pc;
 wire [31:0] npc;
