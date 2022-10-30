@@ -13,8 +13,9 @@
 `define slt_op 5'b00101
 
 
-module ctrl(aluop, op, funct);
+module ctrl(reg_write, aluop, op, funct);
 output reg [4:0] aluop;
+output reg reg_write;
 
 input [5:0] op;
 input [5:0] funct;
@@ -22,12 +23,12 @@ input [5:0] funct;
 always @(*) begin
     if(op == 6'b000000)begin
         case(funct)
-            `add_f:  aluop = `add_op;
-            `addu_f: aluop = `addu_op;
-            `subu_f: aluop = `subu_op;
-            `and_f:  aluop = `and_op;
-            `or_f:   aluop = `or_op;
-            `slt_f:  aluop = `slt_op;    
+            `add_f:  {reg_write, aluop} = {1'b1, `add_op};
+            `addu_f: {reg_write, aluop} = {1'b1, `addu_op};
+            `subu_f: {reg_write, aluop} = {1'b1, `subu_op};
+            `and_f:  {reg_write, aluop} = {1'b1, `and_op};
+            `or_f:   {reg_write, aluop} = {1'b1, `or_op};
+            `slt_f:  {reg_write, aluop} = {1'b1, `slt_op};    
         endcase
     end
 end

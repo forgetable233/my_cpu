@@ -13,6 +13,7 @@ wire [4:0] num_write;
 wire [4:0] shamt;
 wire [5:0] op;
 wire [5:0] funct;
+wire [5:0] imm_16;
 wire [31:0] pc;
 wire [31:0] npc;
 wire [31:0] bus_a;
@@ -25,16 +26,18 @@ assign op = instruction[31:26];
 assign rs = instruction[25:21];
 assign rt = instruction[20:16];
 assign rd = instruction[15:11];
-assign num_write = instruction[15:11];
+assign shamt = instruction[10:5];
+assign funct = instruction[5:0];
+assign imm_16 = instruction[15:0];
+assign num_write = rd;
 
 assign npc = pc + 4;
-assign num_write = rd;
 assign reg_write = 1;
 assign r_data_write = c;
 
 pc PC(.pc(pc), .clock(clock), .reset(reset), .npc(npc));
 im IM(.instruction(instruction), .pc(pc));
-ctrl CTRL(.aluop(aluop), .op(op), .funct(funct));
+ctrl CTRL(.reg_write(reg_write), .aluop(aluop), .op(op), .funct(funct));
 gpr GPR(.a(bus_a), .b(bus_b), .clock(clock), .reg_write(reg_write), .num_write(num_write), .rs(rs), .rt(rt), .data_write(r_data_write));
 alu ALU(.c(c), .a(bus_a), .b(bus_b), .aluop(aluop));
 endmodule
