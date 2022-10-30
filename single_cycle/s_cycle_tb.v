@@ -1,10 +1,8 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ns
 module s_cycle_tb;
 
 reg clock;
 reg reset;
-wire clk;
-wire ret;
 
 initial begin
     clock = 1;
@@ -15,11 +13,9 @@ initial begin
     reset = 1;
 end
 
-always #200
+always #40
     assign clock = ~clock;
 
-assign clk = clock;
-assign ret = reset;
-single_cycle(.clock(clk), .reset(ret));
+// single_cycle single_cycle0(.clock(clock), .reset(reset));
 
 endmodule
