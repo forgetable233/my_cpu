@@ -1,0 +1,20 @@
+D:/codes/verilog/s_cycle/alu.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/s_cycle/alu.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+
+} {} {}} D:/codes/verilog/s_cycle/pc.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/s_cycle/pc.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} D:/codes/verilog/s_cycle/single_cycle.v {0 {vlog -work work -vopt -stats=none D:/codes/verilog/s_cycle/single_cycle.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module single_cycle
+** Error: D:/codes/verilog/s_cycle/single_cycle.v(10): (vlog-2110) Illegal reference to net "clock".
+** Error: D:/codes/verilog/s_cycle/single_cycle.v(11): (vlog-2110) Illegal reference to net "reset".
+** Error: D:/codes/verilog/s_cycle/single_cycle.v(12): (vlog-2110) Illegal reference to net "pc".
+** Error: D:/codes/verilog/s_cycle/single_cycle.v(13): (vlog-2110) Illegal reference to net "npc".
+** Error: D:/codes/verilog/s_cycle/single_cycle.v(20): (vlog-2110) Illegal reference to net "clock".
+
+} {4.0 9.0} {}}

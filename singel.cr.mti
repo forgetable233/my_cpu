@@ -1,0 +1,18 @@
+D:/codes/verilog/pc.v {0 {vlog -work work -vopt -stats=none {D:\codes\verilog\pc.v}
+** Warning: (vlog-14) Failed to open "D:/codes/verilog/singel.mpf" specified by the MODELSIM environment variable.
+No such file or directory. (errno = ENOENT)
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module pc
+** Error: (vlog-13069) D:\codes\verilog\pc.v(11): near ";": syntax error, unexpected ';', expecting '('.
+** Error: (vlog-13069) D:\codes\verilog\pc.v(17): near "endmodule": syntax error, unexpected endmodule, expecting ';' or ','.
+
+} {6.0 8.0} {}} D:/codes/verilog/single_cycle.v {2 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle.v
+** Warning: (vlog-14) Failed to open "D:/codes/verilog/singel.mpf" specified by the MODELSIM environment variable.
+No such file or directory. (errno = ENOENT)
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module single_cycle
+
+Top level modules:
+	single_cycle
+
+} {} {}}
