@@ -13,23 +13,23 @@
 `define slt_op 5'b00101
 
 
-module ctrl(reg_write, aluop, op, funct);
-output reg [4:0] aluop;
-output reg reg_write;
+module alu(c, a, b, aluop);
 
-input [5:0] op;
-input [5:0] funct;
+output reg [31:0] c;
+
+input [31:0] a;
+input [31:0] b;
+input [4:0] aluop;
 
 always @(*) begin
-    if(op == 6'b000000)begin
-        case(funct)
-            `add_f: {reg_write, aluop} = {1'b1, `add_op};
-            `addu_f: {reg_write, aluop} = {1'b1, `addu_op};
-            `subu_f: {reg_write, aluop} = {1'b1, `subu_op};
-            `and_f: {reg_write, aluop} = {1'b1, `and_op};
-            `or_f: {reg_write, aluop} = {1'b1, `or_op};
-            `slt_f: {reg_write, aluop} = {1'b1, `slt_op};    
-        endcase
-    end
+    case(aluop)
+        `add_op:	c = $signed(a) + $signed(b);
+		`addu_op:	c = a + b;
+		`subu_op:	c = a - b;
+		`and_op:	c = a & b;
+		`or_op:		c = a | b;
+		`slt_op:	c = ($signed(a) < $signed(b)) ? 1 : 0;
+    endcase 
 end
+
 endmodule

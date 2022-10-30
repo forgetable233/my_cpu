@@ -17,8 +17,10 @@ assign a = rs ? gp_registers[rs] : 0;
 assign b = rt ? gp_registers[rt] : 0;
 
 always @(posedge clock) begin
-    if (reg_write)
+    if (reg_write && num_write)
         gp_registers[num_write] <= data_write;
+    else
+        gp_registers[0] <= 0;
 end
 
 endmodule
