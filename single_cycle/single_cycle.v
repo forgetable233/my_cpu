@@ -34,10 +34,8 @@ assign rd = instruction[15:11];
 assign shamt = instruction[10:5];
 assign funct  = instruction[5:0];
 assign imm_16 = instruction[15:0];
-assign num_write = rd;
 
 assign npc = pc + 4;
-assign reg_write = 1;
 assign r_data_write = c;
 
 pc PC(  .pc(pc), 

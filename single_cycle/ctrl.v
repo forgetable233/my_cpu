@@ -41,25 +41,14 @@ always @(*) begin
             `slt_f:  {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b0, 1'b0, 1'b0, `slt_op};    
         endcase
     end
-
-    if (op == 6'b001000) begin
-        {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `add_op};
-    end
-
-    if (op == 6'b001001) begin
-        {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `addu_op};
-    end
-
-    if (op == 6'b001100) begin
-        {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `and_op};
-    end
-
-    if (op == 6'b001101) begin
-        {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `or_op};
-    end
-
-    if (op == 6'b001111) begin
-        {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `or_op};
+    else begin
+        case(op)
+            6'b001000: {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `add_op};
+            6'b001001: {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `addu_op};
+            6'b001100: {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `and_op};
+            6'b001101: {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `or_op};
+            6'b001111: {reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b1, 1'b1, 1'b1, `lui_op};
+        endcase
     end
 end
 endmodule

@@ -1,16 +1,16 @@
-D:/codes/verilog/single_cycle/pc.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/pc.v
+D:/codes/verilog/single_cycle/reg_dst_muv.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/reg_dst_muv.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module reg_dst_mux
+
+Top level modules:
+	reg_dst_mux
+
+} {} {}} D:/codes/verilog/single_cycle/pc.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/pc.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module pc
 
 Top level modules:
 	pc
-
-} {} {}} D:/codes/verilog/single_cycle/single_cycle.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/single_cycle.v
-Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
--- Compiling module s_cycle_cpu
-
-Top level modules:
-	s_cycle_cpu
 
 } {} {}} D:/codes/verilog/single_cycle/gpr.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/gpr.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
@@ -18,6 +18,13 @@ Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 
 Top level modules:
 	gpr
+
+} {} {}} D:/codes/verilog/single_cycle/alu.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/alu.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module alu
+
+Top level modules:
+	alu
 
 } {} {}} D:/codes/verilog/single_cycle/alu_src_mux.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/alu_src_mux.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
