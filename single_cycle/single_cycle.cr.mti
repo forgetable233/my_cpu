@@ -5,12 +5,33 @@ Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 Top level modules:
 	pc
 
-} {} {}} D:/codes/verilog/single_cycle/alu.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/alu.v
+} {} {}} D:/codes/verilog/single_cycle/single_cycle.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/single_cycle.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
--- Compiling module alu
+-- Compiling module s_cycle_cpu
 
 Top level modules:
-	alu
+	s_cycle_cpu
+
+} {} {}} D:/codes/verilog/single_cycle/gpr.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/gpr.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module gpr
+
+Top level modules:
+	gpr
+
+} {} {}} D:/codes/verilog/single_cycle/alu_src_mux.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/alu_src_mux.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module alu_src_mux
+
+Top level modules:
+	alu_src_mux
+
+} {} {}} D:/codes/verilog/single_cycle/imm_extend.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/imm_extend.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module imm_extend
+
+Top level modules:
+	imm_extend
 
 } {} {}} D:/codes/verilog/single_cycle/im.v {1 {vlog -work work -vopt -stats=none D:/codes/verilog/single_cycle/im.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019

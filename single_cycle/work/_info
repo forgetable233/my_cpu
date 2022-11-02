@@ -44,48 +44,70 @@ n@_opt2
 R6
 R0
 valu
-Z7 !s110 1667145958
+Z7 !s110 1667431200
 !i10b 1
-!s100 Ne5BegLh7o2KNTb1E=bGn3
-!s11b lU:]gG3?ol<zl`[DUkZmc1
-I7KOVYC]H<LJV`@oH81PIV2
+!s100 ;_Emco7_7YK4N4CXQfR`>3
+!s11b l5McQ0DLV0mZJdQNNXHX]2
+I4?^40g0_okJW26?Wf5j7J3
 Z8 VDg1SIo80bB@j0V0VzS_@n1
 Z9 dD:/codes/verilog/single_cycle
-w1667144627
+w1667431184
 8D:/codes/verilog/single_cycle/alu.v
 FD:/codes/verilog/single_cycle/alu.v
-Z10 L0 16
-Z11 OL;L;2019.2;69
+L0 20
+Z10 OL;L;2019.2;69
 r1
 !s85 0
 31
-Z12 !s108 1667145958.000000
+Z11 !s108 1667431200.000000
 !s107 D:/codes/verilog/single_cycle/alu.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/alu.v|
 !i113 0
-Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+valu_src_mux
+R7
+!i10b 1
+!s100 m3FXGmEzYOCS0Xb`9<YP11
+!s11b WNEDB=Z>I@zR>;h>La9nN2
+IU9T_zR5=_[5mke_0obQO`1
+R8
+R9
+w1667430497
+8D:/codes/verilog/single_cycle/alu_src_mux.v
+FD:/codes/verilog/single_cycle/alu_src_mux.v
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/codes/verilog/single_cycle/alu_src_mux.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/alu_src_mux.v|
+!i113 0
+R12
 R5
 vctrl
 R7
 !i10b 1
-!s100 aM_cQ^WPUKP>Zo=>l80oC0
-!s11b @BY`HU]M8F3nFM2NQ>fo=3
-I_Yl3ROjg>KmlKIOg5mL_;0
+!s100 ;I2_[]P79oZj2cz2^M@631
+!s11b XOSYbfC;egK0b9We<<EA81
+I0@LD>MI=>JUQRbgYnkcN_3
 R8
 R9
-w1667145930
+w1667431196
 8D:/codes/verilog/single_cycle/ctrl.v
 FD:/codes/verilog/single_cycle/ctrl.v
+L0 17
 R10
-R11
 r1
 !s85 0
 31
-R12
+R11
 !s107 D:/codes/verilog/single_cycle/ctrl.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/ctrl.v|
 !i113 0
-R13
+R12
 R5
 vgpr
 R7
@@ -99,15 +121,15 @@ w1667145504
 8D:/codes/verilog/single_cycle/gpr.v
 FD:/codes/verilog/single_cycle/gpr.v
 L0 1
-R11
+R10
 r1
 !s85 0
 31
-R12
+R11
 !s107 D:/codes/verilog/single_cycle/gpr.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/gpr.v|
 !i113 0
-R13
+R12
 R5
 vim
 R7
@@ -121,15 +143,59 @@ w1667144015
 8D:/codes/verilog/single_cycle/im.v
 FD:/codes/verilog/single_cycle/im.v
 L0 1
-R11
+R10
 r1
 !s85 0
 31
-R12
+R11
 !s107 D:/codes/verilog/single_cycle/im.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/im.v|
 !i113 0
-R13
+R12
+R5
+vimm_extend
+R7
+!i10b 1
+!s100 Paagn]m5SGzg<6YAHH6aU1
+!s11b N0[RFk8m:0_D:WXaR:L7O2
+I_WN4H>d2Ng?C:FS:dAcS=1
+R8
+R9
+w1667430605
+8D:/codes/verilog/single_cycle/imm_extend.v
+FD:/codes/verilog/single_cycle/imm_extend.v
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/codes/verilog/single_cycle/imm_extend.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/imm_extend.v|
+!i113 0
+R12
+R5
+vmux
+!s110 1667429906
+!i10b 1
+!s100 nE03=<XV842LM3V?DS[Td0
+!s11b <]dGmH[JmGYYOzfzNTdFQ1
+I;^OYT6nL=6A0Qk@cXFL[42
+R8
+R9
+w1667429891
+8D:/codes/verilog/single_cycle/mux.v
+FD:/codes/verilog/single_cycle/mux.v
+L0 1
+R10
+r1
+!s85 0
+31
+!s108 1667429906.000000
+!s107 D:/codes/verilog/single_cycle/mux.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/mux.v|
+!i113 0
+R12
 R5
 vpc
 R7
@@ -143,37 +209,59 @@ w1667143857
 8D:/codes/verilog/single_cycle/pc.v
 FD:/codes/verilog/single_cycle/pc.v
 L0 1
-R11
+R10
 r1
 !s85 0
 31
-R12
+R11
 !s107 D:/codes/verilog/single_cycle/pc.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/pc.v|
 !i113 0
-R13
+R12
+R5
+vreg_dst_mux
+R7
+!i10b 1
+!s100 nn];9EXDjcRbNgBiic19`2
+!s11b NlNC4mD:1c]hZPkbGF@=i3
+IFZ=R:[en7n<<1dEC>hNbU0
+R8
+R9
+w1667430772
+8D:/codes/verilog/single_cycle/reg_dst_muv.v
+FD:/codes/verilog/single_cycle/reg_dst_muv.v
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/codes/verilog/single_cycle/reg_dst_muv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/reg_dst_muv.v|
+!i113 0
+R12
 R5
 vs_cycle_cpu
 R7
 !i10b 1
-!s100 C9RH6nldJ9eZ3eznMeCmG1
-!s11b a0caeB?hIFobdLW0?YHXG3
-IWV[803LCRE9QYK4Q?ke:j3
+!s100 dA?]7NU1oY1JJl[2?GbgK0
+!s11b HANcbAAD8=5IWAO_CcW>40
+IL6nj2OD5k@Di2;cSK;:K]2
 R8
 R9
-w1667145955
-8D:\codes\verilog\single_cycle\single_cycle.v
-FD:\codes\verilog\single_cycle\single_cycle.v
+w1667430542
+Z13 8D:/codes/verilog/single_cycle/single_cycle.v
+Z14 FD:/codes/verilog/single_cycle/single_cycle.v
 L0 1
-R11
+R10
 r1
 !s85 0
 31
-R12
-!s107 D:\codes\verilog\single_cycle\single_cycle.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:\codes\verilog\single_cycle\single_cycle.v|
+R11
+Z15 !s107 D:/codes/verilog/single_cycle/single_cycle.v|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/single_cycle.v|
 !i113 0
-R13
+R12
 R5
 vs_cycle_tb
 !s110 1667143605
@@ -187,7 +275,7 @@ w1667119802
 8D:/codes/verilog/single_cycle/s_cycle_tb.v
 FD:/codes/verilog/single_cycle/s_cycle_tb.v
 L0 2
-R11
+R10
 r1
 !s85 0
 31
@@ -195,7 +283,7 @@ r1
 !s107 D:/codes/verilog/single_cycle/s_cycle_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/s_cycle_tb.v|
 !i113 0
-R13
+R12
 R5
 vsingle_cycle
 !s110 1667120791
@@ -206,16 +294,16 @@ IQZNi@@P4::X1cV@iOgjhI3
 R8
 R9
 w1667119523
-8D:/codes/verilog/single_cycle/single_cycle.v
-FD:/codes/verilog/single_cycle/single_cycle.v
+R13
+R14
 L0 1
-R11
+R10
 r1
 !s85 0
 31
 !s108 1667120791.000000
-!s107 D:/codes/verilog/single_cycle/single_cycle.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/single_cycle.v|
+R15
+R16
 !i113 0
-R13
+R12
 R5
