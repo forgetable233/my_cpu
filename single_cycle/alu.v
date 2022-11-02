@@ -33,7 +33,7 @@ always @(*) begin
 		`and_op:	c = a & b;
 		`or_op:		c = a | b;
 		`slt_op:	c = ($signed(a) < $signed(b)) ? 1 : 0;
-		`lui_op:	c = b;
+		`lui_op:	c = b << 16;
     endcase 
 end
 

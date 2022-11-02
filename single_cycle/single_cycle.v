@@ -63,13 +63,17 @@ gpr GPR(    .a(bus_a),
             .rt(rt), 
             .data_write(r_data_write));
 
+imm_extend imm_extend(  .imm_16(imm_16),
+                        .imm_32(imm_32),
+                        .if_extend(if_extend));
+
 alu_src_mux alu_src_mux(.b(b), 
-                        .imm_32(imm_32), 
+                        .imm_32(imm_32),
                         .bus_b(bus_b),
                         .alu_src(alu_src));
 
-reg_dst_mux reg_dst_mux(.rt(rt), 
-                        .rd(rd),
+reg_dst_mux reg_dst_mux(.rt(rd), 
+                        .rd(rt),
                         .num_write(num_write),
                         .reg_dst(reg_dst));
 
