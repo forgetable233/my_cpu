@@ -44,7 +44,7 @@ n@_opt2
 R6
 R0
 valu
-Z7 !s110 1667464350
+Z7 !s110 1667464843
 !i10b 1
 !s100 O0[Xd_RJSHjOCQk25]<:d2
 !s11b 9o8@9?:]=KK5eF1LM]YC:2
@@ -59,7 +59,7 @@ Z10 OL;L;2019.2;69
 r1
 !s85 0
 31
-Z11 !s108 1667464350.000000
+Z11 !s108 1667464843.000000
 !s107 D:/codes/verilog/single_cycle/alu.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/alu.v|
 !i113 0
@@ -106,6 +106,28 @@ r1
 R11
 !s107 D:/codes/verilog/single_cycle/ctrl.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/ctrl.v|
+!i113 0
+R12
+R5
+vdm
+R7
+!i10b 1
+!s100 X27JoNY`ZYD;bcaJ:gn851
+!s11b Z@=5Z;jNk2an45b1Mnc[40
+IYYo=zX3z8[Sh1gjQF=aJ:2
+R8
+R9
+w1667464827
+8D:/codes/verilog/single_cycle/dm.v
+FD:/codes/verilog/single_cycle/dm.v
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 D:/codes/verilog/single_cycle/dm.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/codes/verilog/single_cycle/dm.v|
 !i113 0
 R12
 R5
