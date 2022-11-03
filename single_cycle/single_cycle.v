@@ -5,9 +5,9 @@ input   reset;
 
 wire zero;
 wire reg_write;
-wire if_extend;
 wire alu_src;
-wire reg_src;
+wire reg_dst;
+wire if_extend;
 wire [4:0] aluop;
 wire [4:0] rs;
 wire [4:0] rt;
@@ -52,7 +52,7 @@ ctrl CTRL(  .reg_write(reg_write),
             .funct(funct), 
             .if_extend(if_extend), 
             .alu_src(alu_src), 
-            .reg_dst(reg_src));
+            .reg_dst(reg_dst));
 
 gpr GPR(    .a(bus_a), 
             .b(b), 
@@ -72,8 +72,8 @@ alu_src_mux alu_src_mux(.b(b),
                         .bus_b(bus_b),
                         .alu_src(alu_src));
 
-reg_dst_mux reg_dst_mux(.rt(rd), 
-                        .rd(rt),
+reg_dst_mux reg_dst_mux(.rt(rt), 
+                        .rd(rd),
                         .num_write(num_write),
                         .reg_dst(reg_dst));
 
