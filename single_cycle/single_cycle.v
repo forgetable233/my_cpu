@@ -6,8 +6,10 @@ input   reset;
 wire zero;
 wire reg_write;
 wire alu_src;
-wire reg_dst;
 wire if_extend;
+wire mem_write;
+wire reg_dst;
+wire memtoreg;
 wire [4:0] aluop;
 wire [4:0] rs;
 wire [4:0] rt;
@@ -23,9 +25,10 @@ wire [31:0] bus_a;
 wire [31:0] bus_b;
 wire [31:0] b;
 wire [31:0] c;
-wire [31:0] r_data_write;
+wire [31:0] reg_wirte_data;
 wire [31:0] instruction;
 wire [31:0] imm_32;
+wire [31:0] mem_load_data;
 
 assign op = instruction[31:26];
 assign rs = instruction[25:21];
@@ -36,7 +39,6 @@ assign funct  = instruction[5:0];
 assign imm_16 = instruction[15:0];
 
 assign npc = pc + 4;
-assign r_data_write = c;
 
 pc PC(  .pc(pc), 
         .clock(clock), 
@@ -52,7 +54,9 @@ ctrl CTRL(  .reg_write(reg_write),
             .funct(funct), 
             .if_extend(if_extend), 
             .alu_src(alu_src), 
-            .reg_dst(reg_dst));
+            .reg_dst(reg_dst),
+            .mem_write(mem_write),
+            .memtoreg(memtoreg));
 
 gpr GPR(    .a(bus_a), 
             .b(b), 
@@ -61,7 +65,18 @@ gpr GPR(    .a(bus_a),
             .num_write(num_write), 
             .rs(rs), 
             .rt(rt), 
-            .data_write(r_data_write));
+            .data_write(reg_wirte_data));
+
+mux mux(.in1(c),
+        .in2(mem_load_data),
+        .out(reg_wirte_data),
+        .op(memtoreg));
+
+dm DM(  .data_out(mem_load_data),
+        .clock(clock),
+        .mem_write(mem_write),
+        .address(c),
+        .data_in(b));
 
 imm_extend imm_extend(  .imm_16(imm_16),
                         .imm_32(imm_32),
