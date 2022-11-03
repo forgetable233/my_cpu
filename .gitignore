@@ -1,2 +1,8 @@
 single_cycle/*.zip
 single_cycle/work/
+single_cycle/single_cycle.mpf
+single_cycle/vsim.wlf
+
+
+single_cycle/single_cycle.cr.mti
+single_cycle/*.zip
