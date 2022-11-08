@@ -8,8 +8,9 @@ wire reg_write;
 wire alu_src;
 wire if_extend;
 wire mem_write;
-wire reg_dst;
-wire memtoreg;
+wire [1:0] reg_dst;
+wire [1:0] memtoreg;
+wire [1:0] s_npc;
 wire [4:0] aluop;
 wire [4:0] rs;
 wire [4:0] rt;
@@ -21,6 +22,7 @@ wire [5:0] funct;
 wire [15:0] imm_16;
 wire [31:0] pc;
 wire [31:0] npc;
+wire [31:0] npc_t;
 wire [31:0] bus_a;
 wire [31:0] bus_b;
 wire [31:0] b;
@@ -56,7 +58,8 @@ ctrl CTRL(  .reg_write(reg_write),
             .alu_src(alu_src), 
             .reg_dst(reg_dst),
             .mem_write(mem_write),
-            .memtoreg(memtoreg));
+            .memtoreg(memtoreg),
+            .s_npc(s_npc));
 
 gpr GPR(    .a(bus_a), 
             .b(b), 
@@ -66,11 +69,6 @@ gpr GPR(    .a(bus_a),
             .rs(rs), 
             .rt(rt), 
             .data_write(reg_wirte_data));
-
-mux mux(.in1(c),
-        .in2(mem_load_data),
-        .out(reg_wirte_data),
-        .op(memtoreg));
 
 dm DM(  .data_out(mem_load_data),
         .clock(clock),
@@ -82,18 +80,26 @@ imm_extend imm_extend(  .imm_16(imm_16),
                         .imm_32(imm_32),
                         .if_extend(if_extend));
 
+mux MUX2_INS(   .out1(num_write),
+                .in1(rt),
+                .in2(rd),
+                .in3(5'b111111),
+                .op(reg_dst));
+
+mux MUX2_DM(    .out1(data_write),
+                .in1(npc_t),
+                .in2(c),
+                .in3(data_out),
+                .op(memtoreg));
+
 alu_src_mux alu_src_mux(.b(b), 
                         .imm_32(imm_32),
                         .bus_b(bus_b),
                         .alu_src(alu_src));
 
-reg_dst_mux reg_dst_mux(.rt(rt), 
-                        .rd(rd),
-                        .num_write(num_write),
-                        .reg_dst(reg_dst));
-
 alu ALU(    .c(c), 
             .a(bus_a), 
             .b(bus_b), 
-            .aluop(aluop));
+            .aluop(aluop),
+            .zero(zero));
 endmodule

@@ -1,13 +1,3 @@
-`define add_f	6'b100000
-`define addu_f 	6'b100001
-`define subu_f 	6'b100011
-`define and_f 	6'b100100
-`define or_f 	6'b100101
-`define slt_f 	6'b101010
-`define addi_f 	6'b101011
-`define addiu_f 6'101100
-`define andi_f 	6'000000
-
 `define add_op 	5'b00000
 `define addu_op 5'b00001
 `define subu_op 5'b00010
@@ -17,13 +7,16 @@
 `define lui_op  5'b00110
 
 
-module alu(c, a, b, aluop);
+module alu(c, a, b, aluop, zero);
 
 output reg [31:0] c;
 
 input [31:0] a;
 input [31:0] b;
 input [4:0] aluop;
+input zero;
+
+assign zero = (c == 0) ? 1 : 0;
 
 always @(*) begin
     case(aluop)
