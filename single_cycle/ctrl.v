@@ -52,7 +52,7 @@ always @(*) begin
             6'b001100: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, `and_op};    // andi
             6'b001101: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, `or_op};     // ori
             6'b001111: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1, `lui_op};    // lui
-            6'b101011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, `add_op};    // sw
+            6'b101011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1, `add_op};    // sw
             6'b100011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, aluop} = {1'b1, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1, `add_op};    // lw
         endcase
     end
