@@ -20,6 +20,7 @@ wire [4:0] shamt;
 wire [5:0] op;
 wire [5:0] funct;
 wire [15:0] imm_16;
+wire [25:0] instr_index;
 wire [31:0] pc;
 wire [31:0] npc;
 wire [31:0] npc_t;
@@ -34,13 +35,13 @@ wire [31:0] mem_load_data;
 
 assign op = instruction[31:26];
 assign rs = instruction[25:21];
+assign instr_index = instruction[25:0];
 assign rt = instruction[20:16];
 assign rd = instruction[15:11];
 assign shamt = instruction[10:5];
 assign funct  = instruction[5:0];
 assign imm_16 = instruction[15:0];
-
-assign npc = pc + 4;
+assign npc_t = pc + 4;
 
 pc PC(  .pc(pc), 
         .clock(clock), 
@@ -80,16 +81,16 @@ imm_extend imm_extend(  .imm_16(imm_16),
                         .imm_32(imm_32),
                         .if_extend(if_extend));
 
-mux MUX2_INS(   .out1(num_write),
+mux2 MUX2_INS(  .out1(num_write),
                 .in1(rt),
                 .in2(rd),
                 .in3(5'b111111),
                 .op(reg_dst));
 
-mux MUX2_DM(    .out1(data_write),
+mux2 MUX2_DM(   .out1(reg_wirte_data),
                 .in1(npc_t),
                 .in2(c),
-                .in3(data_out),
+                .in3(mem_load_data),
                 .op(memtoreg));
 
 alu_src_mux alu_src_mux(.b(b), 
@@ -102,4 +103,12 @@ alu ALU(    .c(c),
             .b(bus_b), 
             .aluop(aluop),
             .zero(zero));
+
+npc NPC(    .npc(npc),
+            .npc_t(npc_t),
+            .instr_index(instr_index),
+            .offset(imm_32),
+            .a(bus_a),
+            .zero(zero),
+            .s(s_npc));
 endmodule

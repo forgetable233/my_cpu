@@ -48,21 +48,21 @@ always @(*) begin
             `and_f:  {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b0, 2'b01, 2'b11,  `and_op};
             `or_f:   {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b0, 2'b01, 2'b11,  `or_op};
             `slt_f:  {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b0, 2'b01, 2'b11,  `slt_op};    
-            `jr_f:   {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b1, 1'b0, 1'b0, 2'b00, 2'b10,  `none};
+            `jr_f:   {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b0, 1'b0, 1'b0, 2'b00, 2'b10,  `none};
         endcase
     end
     else begin
         case(op)
-            6'b001000: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11 , `add_op};    // addi
-            6'b001001: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11 , `addu_op};   // addiu
-            6'b001100: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b1, 2'b00, 2'b11 , `and_op};    // andi
-            6'b001101: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b1, 2'b00, 2'b11 , `or_op};     // ori
-            6'b001111: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11 , `lui_op};    // lui
-            6'b101011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b1, 1'b0, 1'b1, 1'b1, 2'b00, 2'b11 , `add_op};    // sw
-            6'b100011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b10, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11 , `add_op};    // lw
-            6'b000100: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b0, 1'b1, 1'b0, 2'b00, 2'b00 , `subu_op};   // beq
-            6'b000010: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b0, 1'b0, 1'b0, 2'b00, 2'b01 , `none};      // j
-            6'b000011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b0, 2'b10, 2'b01 , `none};      // jal
+            6'b001000: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11, `add_op};    // addi
+            6'b001001: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11, `addu_op};   // addiu
+            6'b001100: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b1, 2'b00, 2'b11, `and_op};    // andi
+            6'b001101: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b0, 1'b1, 2'b00, 2'b11, `or_op};     // ori
+            6'b001111: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11, `lui_op};    // lui
+            6'b101011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b01, 1'b1, 1'b0, 1'b1, 1'b1, 2'b00, 2'b11, `add_op};    // sw
+            6'b100011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b10, 1'b0, 1'b1, 1'b1, 1'b1, 2'b00, 2'b11, `add_op};    // lw
+            6'b000100: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b0, 1'b1, 1'b0, 2'b00, 2'b00, `subu_op};   // beq
+            6'b000010: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b0, 1'b0, 1'b0, 2'b00, 2'b01, `none};      // j
+            6'b000011: {memtoreg, mem_write, reg_write, if_extend, alu_src, reg_dst, s_npc, aluop} = {2'b00, 1'b0, 1'b1, 1'b0, 1'b0, 2'b10, 2'b01, `none};      // jal
         endcase
     end
 end
