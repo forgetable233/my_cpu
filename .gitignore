@@ -6,3 +6,11 @@ single_cycle/vsim.wlf
 
 single_cycle/single_cycle.cr.mti
 single_cycle/*.zip
+
+multi_cycle_cpu/work/
+multi_cycle_cpu/multi_cycle_cpu.mpf
+multi_cycle_cpu/vsim.wlf
+
+
+multi_cycle_cpu/multi_cycle_cpu.cr.mti
+multi_cycle_cpu/*.zip
